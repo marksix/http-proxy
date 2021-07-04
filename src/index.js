@@ -1,4 +1,4 @@
-let url = 'http://127.0.0.1:9527'
+let url = 'https://www.github.com'
 
 $.ajax(
 
