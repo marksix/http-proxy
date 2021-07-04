@@ -1,4 +1,4 @@
-let url = 'https://www.github.com'
+let url = 'https://http-proxy.luckin.workers.dev'
 
 $.ajax(
 
