@@ -5,13 +5,11 @@ const express = require('express');
 const timeout = require('connect-timeout');
 const proxy = require('http-proxy-middleware');
 const app = express();
-// 本服务端口
-const PORT = 9527
 // cookie写入地址
-const cookieUrl = '127.0.0.1'
+const cookieUrl = 'www.github.com'
 // PORT 服务端口
 const  kandao =  { 
-  target : 'http://125.44.97.88:8900',
+  target : 'https://expressproxy.luckin.workers.dev',
   changeOrigin: true,
   cookieDomainRewrite: {
     "*": cookieUrl // 把相应的 cookie 域都设置成 localhost
@@ -41,9 +39,9 @@ app.use((req, res, next) => {
   if (!req.timedout) next();
 });
 // 看到代理
-app.use(proxy('/cms', { ...kandao }));
+app.use(proxy('/', { ...kandao }));
  
 // 监听端口
-app.listen(PORT, () => {
-  console.log(`启动代理服务器=> http://127.0.0.1:${PORT}`);
+app.listen(() => {
+  console.log(`启动代理服务器=> https://expressproxy.luckin.worders.dev`);
 });
