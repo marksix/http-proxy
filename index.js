@@ -9,7 +9,7 @@ const app = express();
 const cookieUrl = 'www.github.com'
 // PORT 服务端口
 const  kandao =  { 
-  target : 'https://expressproxy.luckin.workers.dev',
+  target : 'https://www.github.com',
   changeOrigin: true,
   cookieDomainRewrite: {
     "*": cookieUrl // 把相应的 cookie 域都设置成 localhost
@@ -43,5 +43,5 @@ app.use(proxy('/', { ...kandao }));
  
 // 监听端口
 app.listen(() => {
-  console.log(`启动代理服务器=> https://expressproxy.luckin.worders.dev`);
+  console.log(`启动代理服务器=> https://http-proxy.luckin.worders.dev`);
 });
